@@ -126,13 +126,7 @@
       "startDate": "2023-08-31",
       "endDate": "2025-05-31",
       "score": "4.1/4.0",
-      "courses": [
-        "Generative AI",
-        "Advanced NLP",
-        "Deep Learning",
-        "Machine Learning",
-        "Multimodal Machine Learning"
-      ]
+      "courses": ["Generative AI", "Advanced NLP", "Deep Learning", "Machine Learning", "Multimodal Machine Learning"]
     },
     {
       "institution": "B. M. S. College of Engineering",
@@ -141,12 +135,7 @@
       "startDate": "2018-12-31",
       "endDate": "2022-12-31",
       "score": "9.9/10.0",
-      "courses": [
-        "Data Structures",
-        "Algorithms",
-        "Operating Systems",
-        "Computer Networks"
-      ]
+      "courses": ["Data Structures", "Algorithms", "Operating Systems", "Computer Networks"]
     }
   ],
   "awards": [],
