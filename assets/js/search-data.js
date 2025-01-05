@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of my projects. WIP...",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-cv",
           title: "cv",
           description: "My professional experience.",
@@ -90,6 +97,31 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-english-to-french-machine-translation",
+          title: 'English to French Machine Translation',
+          description: "First LLM project. Used llama-cpp to quantize Llama 2 7B and run it locally on my base macbook air. Did 8-Bit Quantized QLoRA finetuning using HuggingFace TRL library to improve English to French translation of the model",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/enfr_llm/";
+            },},{id: "projects-generalizable-agents-with-llama-2",
+          title: 'Generalizable Agents with Llama 2',
+          description: "Used Llama 2 to build a general purpose agent for various tasks from OS to Knowledge Graph environments. Instruction tuning combineed with tree-of-thought sampling on a mixture of environment interaction trajectories and ShareGPT text.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm_agent/";
+            },},{id: "projects-real-world-movie-recommendation-system",
+          title: 'Real-world Movie Recommendation System',
+          description: "Built as part of 11-695 Course Project. A scalable movie recommendation system serving 1M+ pseudo users in a fully simulated environment, complete with load balancing, auto scaling, system and model monitoring, and evaluation. Top 3 in class for highest average user ratings of recommended movies. Used SVG, XGBoost, Flask, Docker, Prometheus, Grafana.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/movie_rec/";
+            },},{id: "projects-improving-multi-modal-interactions-in-memes",
+          title: 'Improving Multi-modal Interactions in Memes',
+          description: "Analyzing vision-language interactions in memes and improving multimodal model performances on sentiment classification, caption generation and question-answering.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multimodal/";
+            },},{id: "projects-rag-question-answering-system-on-pittsburgh",
+          title: 'RAG Question Answering System on Pittsburgh',
+          description: "Built a hybrid retrieval-augmented question answering pipeline on everything Pittsburgh, from scratch (end to end), using LangChain, Mistral, Command-R-Plus, and ChromaDB.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pitt_rag/";
             },},{
         id: 'social-email',
         title: 'email',
