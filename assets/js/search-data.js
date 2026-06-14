@@ -41,16 +41,14 @@ ninja.data = [{
           window.open("https://medium.com/@ajaymittur/mlbox-automating-machine-learning-in-python-f6779371ae21?source=rss-1fb8a203f419------2", "_blank");
         
       },
-    },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+    },{id: "news-started-my-master-s-in-ai-at-carnegie-mellon-university-s-language-technologies-institute-school",
+          title: 'Started my Master’s in AI at Carnegie Mellon University’s Language Technologies Institute! :school:...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-graduated-from-carnegie-mellon-university-with-an-ms-in-artificial-intelligence-and-innovation-mortar-board",
+          title: 'Graduated from Carnegie Mellon University with an MS in Artificial Intelligence and Innovation!...',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-joined-nvidia-as-an-applied-research-engineer-working-on-llm-post-training-and-agents-for-hardware-design",
+          title: 'Joined NVIDIA as an Applied Research Engineer, working on LLM post-training and agents...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
@@ -122,19 +120,17 @@ ninja.data = [{
           description: "Built a hybrid retrieval-augmented question answering pipeline on everything Pittsburgh, from scratch (end to end), using LangChain, Mistral, Command-R-Plus, and ChromaDB.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pitt_rag/";
+            },},{id: "projects-llm-agents-for-scientific-discovery",
+          title: 'LLM Agents for Scientific Discovery',
+          description: "Research with Prof. Graham Neubig (CMU LTI) on LLM agents for novel scientific idea generation, experiment planning, code generation, and paper writing.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/science_agents/";
             },},{
-        id: 'social-email',
-        title: 'email',
+        id: 'social-x',
+        title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%61%6D%69%74%74%75%72[%61%74]%63%73[.]%63%6D%75[.]%65%64%75", "_blank");
-        },
-      },{
-        id: 'social-github',
-        title: 'GitHub',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://github.com/ajaymittur", "_blank");
+          window.open("https://twitter.com/ajaymittur", "_blank");
         },
       },{
         id: 'social-linkedin',
@@ -144,25 +140,11 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/ajay-mittur", "_blank");
         },
       },{
-        id: 'social-medium',
-        title: 'Medium',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://medium.com/@ajaymittur", "_blank");
-        },
-      },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://scholar.google.com/citations?user=1xkVOeYAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-x',
-        title: 'X',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://twitter.com/ajaymittur", "_blank");
+          window.open("https://github.com/ajaymittur", "_blank");
         },
       },{
       id: 'light-theme',
