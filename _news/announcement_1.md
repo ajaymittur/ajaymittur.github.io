@@ -1,8 +1,9 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2026-03-01 09:00:00-0800
 inline: true
 related_posts: false
+published: false
 ---
 
-A simple inline announcement.
+Promoted to Senior Applied Research Engineer at NVIDIA, leading research on coding agents for chip design. :rocket:
