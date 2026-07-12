@@ -1,16 +1,10 @@
 ---
 layout: post
 title: "Coding Agents, Harnesses, and Where Things Are Going"
-date: 2026-07-11 10:00:00
+date: 2026-07-11
 description: "Two schools of coding agents, why they're converging, and why the harness — not just the model — is where a lot of the gains now live."
 tags: agents llm coding-agents harness-engineering
 categories: agents
-thumbnail: assets/img/harness-benchmark.png
-giscus_comments: false
-related_posts: false
-citation: true
-toc:
-  sidebar: left
 ---
 
 *I do a good chunk of research on coding agents and harnesses at NVIDIA. This is my take on where the design of these systems has been heading.*
@@ -48,8 +42,7 @@ Which is exactly the point: once ReAct's "run this command" tool becomes the pri
 
 You can watch this happen live. Point Codex at a task and it will often *write and run an ephemeral script* rather than make a tidy sequence of tool calls — a `python3 - <<'PY' … PY` heredoc that greps the tree, filters, and prints an answer in one shot:
 
-{% include figure.liquid loading="eager" path="assets/img/heredoc-codeexec.png" class="img-fluid rounded z-depth-1" zoomable=true alt="A terminal-tool code-execution step: a Codex-style agent writing and running a python3 heredoc script that greps the repo and prints an answer in one shot." %}
-<div class="caption">An illustrative heredoc code-execution step, of the kind Codex/GPT-style agents frequently produce.</div>
+![An illustrative heredoc code-execution step, as often produced by Codex/GPT-style agents](./assets/heredoc-codeexec.png)
 
 *Illustrative, but this is a real and widely-observed behavior:* GPT/Codex frequently reach for Python (or `cat`, `node`, even Ruby) via the shell instead of a dedicated file-edit tool — to the point where people [debate how to stop it in `AGENTS.md`](https://github.com/openai/codex/discussions/3057). It's very likely a fingerprint of the RL environment these models were trained in, and it's the CodeAct idea leaking out of a plain terminal tool: one code action does the work of a dozen tool calls.
 
@@ -83,8 +76,7 @@ The fold can make it sound like the harness is vanishing. It isn't — it's gett
 
 This is where owning the harness end to end pays off, and where I've spent most of my time. Here's an illustrative result on an internal coding benchmark — the same model throughout, only the harness changing:
 
-{% include figure.liquid loading="eager" path="assets/img/harness-benchmark.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Bar chart of scores on an internal coding benchmark for a single fixed model. Two rounds of harness engineering more than double the score over a plain terminal agent; a fourth, speculative bar suggests a simpler harness could later match it." %}
-<div class="caption">Same model throughout; only the harness changes. The fourth bar is speculative.</div>
+![Harness engineering on an internal coding benchmark](./assets/harness-benchmark.png)
 
 The first three bars are measured. Starting from a plain terminal agent, two rounds of harness engineering — better ways for the agent to navigate and retrieve context, alongside continual prompt and context-management work — more than doubled the score, with no model change. It's not a coincidence that "install ripgrep" has become standard advice for coding agents: in a bash-native world, the harness's leverage moves to *how efficiently the agent can navigate and retrieve context*, not how many bespoke tools it has.
 
@@ -100,15 +92,13 @@ This isn't just my anecdote. LangChain recently took their coding agent [from To
 
 You can even see the harness effect *at the leaderboard level*. On [Terminal-Bench](https://www.tbench.ai/leaderboard/terminal-bench/2.1), the exact same model posts meaningfully different scores depending on the harness it's run under. Here, each model scores several points higher on its own tuned harness (Codex CLI) than on the neutral Terminus-2 harness everyone else is measured on:
 
-{% include figure.liquid loading="eager" path="assets/img/harness-comparison.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Terminal-Bench comparison showing each model scoring 5 to 7 points higher on its own tuned harness (Codex CLI) than on the neutral Terminus-2 harness, with no model change." %}
-<div class="caption">The same model scores several points higher on its own tuned harness than on the neutral Terminus-2 harness.</div>
+![Same model, different harness on Terminal-Bench](./assets/harness-comparison.png)
 
 That gap — 5 to 7 points here — is *pure harness*, no model change. It's also why cross-harness leaderboard comparisons are slippery: labs report their headline number on their own tuned harness, which flatters it, so it isn't directly comparable to a neutral-harness score. (Figures from public Terminal-Bench reporting and Anthropic's Opus 4.6 system card, via [this roundup](https://www.morphllm.com/comparisons/codex-vs-claude-code).)
 
 It'd be tempting to reduce that to a tidy rule — "a model does best on its home harness." It's not that clean. [Artificial Analysis](https://artificialanalysis.ai/agents/coding-agents#harness-comparison) holds Claude Opus 4.7 constant across three harnesses — OpenCode, Cursor CLI, and Claude Code — on their composite Coding Agent Index, and the ranking flips:
 
-{% include figure.liquid loading="eager" path="assets/img/harness-comparison-opus.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Artificial Analysis Coding Agent Index for a single fixed model (Opus 4.7) across three harnesses, showing about eight points of spread and Claude Code ranking last, behind OpenCode." %}
-<div class="caption">Same model (Opus 4.7), only the harness changes. Source: Artificial Analysis Coding Agent Index.</div>
+![Same model (Opus 4.7), three harnesses — Artificial Analysis Coding Agent Index](./assets/harness-comparison-opus.png)
 
 Eight points of spread from the harness alone — but this time Anthropic's own Claude Code comes *last* for Opus, behind OpenCode. Put the two charts side by side and the lesson isn't "own harness wins"; it's that harness choice swings the *same* model by a lot, and *which* harness is best is an empirical, model-specific question you can't predict from who built it. That's the whole reason you can't treat the harness as a fixed given — and why owning and tuning it is where the research actually is.
 
