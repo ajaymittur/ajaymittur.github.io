@@ -1,6 +1,7 @@
 name: Deploy site
 
 on:
+  # Keep this workflow dispatchable and redeploy whenever site inputs change on main.
   push:
     branches:
       - master
