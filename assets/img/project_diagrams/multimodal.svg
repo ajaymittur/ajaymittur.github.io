@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Multimodal Interactions in Memes</title><desc id="desc">Meme image and text fused with retrieved knowledge and visual reasoning.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#48c7d9"/></marker></defs>
+<rect width="1200" height="675" rx="28" fill="#101827"/>
+<text x="64" y="76" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Multimodal Interactions in Memes</text>
+<text x="64" y="112" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="18">Vision-language fusion with external knowledge and abductive reasoning</text>
+<g font-family="Inter,Arial,sans-serif">
+<rect x="64" y="170" width="242" height="260" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="185" y="208" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Input meme</text>
+<rect x="94" y="232" width="182" height="108" rx="12" fill="#302d59"/>
+<circle cx="151" cy="278" r="25" fill="#8b7cf6"/><rect x="190" y="250" width="56" height="56" rx="8" fill="#5a4fbb"/>
+<rect x="94" y="356" width="182" height="42" rx="10" fill="#15313b"/>
+<line x1="112" y1="372" x2="256" y2="372" stroke="#82dce7" stroke-width="5"/><line x1="112" y1="386" x2="215" y2="386" stroke="#4f8591" stroke-width="5"/>
+<line x1="306" y1="300" x2="386" y2="300" stroke="#8b7cf6" stroke-width="4" marker-end="url(#a)"/>
+<rect x="394" y="190" width="252" height="220" rx="18" fill="#17243a" stroke="#8b7cf6" stroke-width="2"/>
+<text x="520" y="230" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Q-former fusion</text>
+<circle cx="468" cy="296" r="35" fill="#302d59" stroke="#8b7cf6" stroke-width="2"/><text x="468" y="302" text-anchor="middle" fill="#bdb5ff" font-size="15">Vision</text>
+<circle cx="572" cy="296" r="35" fill="#15313b" stroke="#48c7d9" stroke-width="2"/><text x="572" y="302" text-anchor="middle" fill="#82dce7" font-size="15">Text</text>
+<path d="M500 284 C520 260 540 260 560 284M500 308 C520 332 540 332 560 308" fill="none" stroke="#f2b84b" stroke-width="3"/>
+<text x="520" y="370" text-anchor="middle" fill="#9fb0c7" font-size="16">Synergistic representation</text>
+<line x1="646" y1="300" x2="726" y2="300" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="734" y="170" width="402" height="260" rx="18" fill="#17243a" stroke="#48c7d9" stroke-width="2"/>
+<text x="935" y="208" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Reasoning support</text>
+<rect x="770" y="236" width="144" height="68" rx="12" fill="#15313b"/><text x="842" y="266" text-anchor="middle" fill="#82dce7" font-size="16" font-weight="700">CLIP retrieval</text><text x="842" y="288" text-anchor="middle" fill="#9fb0c7" font-size="14">knowledge context</text>
+<rect x="956" y="236" width="144" height="68" rx="12" fill="#302d59"/><text x="1028" y="266" text-anchor="middle" fill="#bdb5ff" font-size="16" font-weight="700">SHERLOCK</text><text x="1028" y="288" text-anchor="middle" fill="#9fb0c7" font-size="14">abductive tuning</text>
+<line x1="914" y1="270" x2="948" y2="270" stroke="#48c7d9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="827" y="338" width="216" height="56" rx="12" fill="#3c3421" stroke="#f2b84b"/><text x="935" y="372" text-anchor="middle" fill="#f7cf7a" font-size="17" font-weight="700">Contextual interpretation</text>
+<rect x="64" y="482" width="1072" height="112" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="94" y="522" fill="#edf2f7" font-size="20" font-weight="700">Caption generation with RAG (k=5)</text>
+<text x="94" y="561" fill="#9fb0c7" font-size="17">BERTScore-F1</text><text x="252" y="561" fill="#82dce7" font-size="21" font-weight="700">0.88</text>
+<text x="414" y="561" fill="#9fb0c7" font-size="17">ROUGE-L</text><text x="518" y="561" fill="#bdb5ff" font-size="21" font-weight="700">0.32</text>
+<text x="686" y="561" fill="#9fb0c7" font-size="17">CLIPScore</text><text x="796" y="561" fill="#f7cf7a" font-size="21" font-weight="700">0.79</text>
+<text x="928" y="556" fill="#f39a9a" font-size="15">Retrieval quality remains critical</text>
+</g></svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Movie Recommendation System</title><desc id="desc">Production recommendation pipeline with models, serving, A/B testing, monitoring, and feedback.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#48c7d9"/></marker></defs>
+<rect width="1200" height="675" rx="28" fill="#101827"/>
+<text x="64" y="76" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Production Movie Recommendation System</text>
+<text x="64" y="112" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="18">Serving, experimentation, monitoring, and feedback at simulated scale</text>
+<g font-family="Inter,Arial,sans-serif">
+<rect x="64" y="174" width="196" height="122" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="162" y="215" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Kafka streams</text><text x="162" y="248" text-anchor="middle" fill="#9fb0c7" font-size="16">users · movies</text><text x="162" y="276" text-anchor="middle" fill="#9fb0c7" font-size="16">ratings · events</text>
+<line x1="260" y1="235" x2="330" y2="235" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="338" y="154" width="244" height="162" rx="18" fill="#17243a" stroke="#8b7cf6" stroke-width="2"/>
+<text x="460" y="196" text-anchor="middle" fill="#edf2f7" font-size="18" font-weight="700">Recommendation models</text>
+<rect x="371" y="222" width="82" height="58" rx="12" fill="#302d59"/><text x="412" y="257" text-anchor="middle" fill="#bdb5ff" font-size="18" font-weight="700">SVD</text>
+<rect x="468" y="222" width="82" height="58" rx="12" fill="#3c3421"/><text x="509" y="257" text-anchor="middle" fill="#f7cf7a" font-size="17" font-weight="700">XGB</text>
+<line x1="582" y1="235" x2="652" y2="235" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="660" y="174" width="196" height="122" rx="18" fill="#15313b" stroke="#48c7d9" stroke-width="2"/>
+<text x="758" y="215" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Flask service</text><text x="758" y="248" text-anchor="middle" fill="#82dce7" font-size="16">Docker · caching</text><text x="758" y="276" text-anchor="middle" fill="#82dce7" font-size="16">load balancing</text>
+<line x1="856" y1="235" x2="926" y2="235" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="934" y="174" width="202" height="122" rx="18" fill="#17243a" stroke="#f2b84b" stroke-width="2"/>
+<text x="1035" y="215" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">A/B delivery</text><text x="1035" y="248" text-anchor="middle" fill="#f7cf7a" font-size="16">1M+ simulated users</text><text x="1035" y="276" text-anchor="middle" fill="#f7cf7a" font-size="16">ranked recommendations</text>
+<rect x="64" y="376" width="334" height="198" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="94" y="418" fill="#edf2f7" font-size="21" font-weight="700">Online evaluation</text>
+<text x="94" y="462" fill="#9fb0c7" font-size="17">Click-through rate</text><rect x="244" y="446" width="112" height="20" rx="5" fill="#48c7d9"/>
+<text x="94" y="506" fill="#9fb0c7" font-size="17">Mean reciprocal rank</text><rect x="278" y="490" width="78" height="20" rx="5" fill="#8b7cf6"/>
+<text x="94" y="550" fill="#9fb0c7" font-size="17">Service uptime</text><text x="244" y="550" fill="#82dce7" font-size="20" font-weight="700">95–99%</text>
+<rect x="432" y="376" width="334" height="198" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="462" y="418" fill="#edf2f7" font-size="21" font-weight="700">Monitoring</text>
+<polyline points="470,528 510,500 550,514 590,456 630,478 676,438 728,452" fill="none" stroke="#48c7d9" stroke-width="4"/>
+<line x1="470" y1="540" x2="728" y2="540" stroke="#304461" stroke-width="2"/>
+<text x="470" y="466" fill="#9fb0c7" font-size="16">Prometheus + Grafana</text>
+<rect x="800" y="376" width="336" height="198" rx="18" fill="#17243a" stroke="#ef6a6a" stroke-width="2"/>
+<text x="830" y="418" fill="#edf2f7" font-size="21" font-weight="700">Popularity feedback loop</text>
+<circle cx="884" cy="490" r="34" fill="#3a2731" stroke="#ef6a6a" stroke-width="2"/><text x="884" y="496" text-anchor="middle" fill="#f39a9a" font-size="15">Popular</text>
+<circle cx="1048" cy="490" r="34" fill="#3c3421" stroke="#f2b84b" stroke-width="2"/><text x="1048" y="496" text-anchor="middle" fill="#f7cf7a" font-size="15">Ratings</text>
+<path d="M918 478 C950 452 982 452 1014 478" fill="none" stroke="#ef6a6a" stroke-width="3" marker-end="url(#a)"/>
+<path d="M1014 502 C982 528 950 528 918 502" fill="none" stroke="#f2b84b" stroke-width="3" marker-end="url(#a)"/>
+</g></svg>
