@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Pittsburgh RAG Question Answering</title><desc id="desc">Multi-query retrieval pipeline over local web and PDF sources.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#48c7d9"/></marker></defs>
+<rect width="1200" height="675" rx="28" fill="#101827"/>
+<text x="64" y="76" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Pittsburgh + CMU RAG Question Answering</text>
+<text x="64" y="112" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="18">End-to-end knowledge collection, multi-query retrieval, and grounded generation</text>
+<g font-family="Inter,Arial,sans-serif">
+<rect x="64" y="170" width="206" height="250" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="167" y="210" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Knowledge sources</text>
+<rect x="94" y="238" width="146" height="42" rx="9" fill="#213c55"/><text x="167" y="265" text-anchor="middle" fill="#82dce7" font-size="15">Official websites</text>
+<rect x="94" y="294" width="146" height="42" rx="9" fill="#302d59"/><text x="167" y="321" text-anchor="middle" fill="#bdb5ff" font-size="15">Events + Wikipedia</text>
+<rect x="94" y="350" width="146" height="42" rx="9" fill="#3c3421"/><text x="167" y="377" text-anchor="middle" fill="#f7cf7a" font-size="15">Budgets + PDFs</text>
+<line x1="270" y1="295" x2="342" y2="295" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="350" y="190" width="220" height="210" rx="18" fill="#17243a" stroke="#48c7d9" stroke-width="2"/>
+<text x="460" y="230" text-anchor="middle" fill="#edf2f7" font-size="18" font-weight="700">Vector knowledge base</text>
+<ellipse cx="460" cy="278" rx="66" ry="24" fill="#15313b" stroke="#48c7d9" stroke-width="2"/>
+<rect x="394" y="278" width="132" height="66" fill="#15313b" stroke="#48c7d9" stroke-width="2"/>
+<ellipse cx="460" cy="344" rx="66" ry="24" fill="#15313b" stroke="#48c7d9" stroke-width="2"/>
+<text x="460" y="319" text-anchor="middle" fill="#82dce7" font-size="18" font-weight="700">30,000</text>
+<text x="460" y="342" text-anchor="middle" fill="#9fb0c7" font-size="14">document chunks</text>
+<line x1="570" y1="295" x2="642" y2="295" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="650" y="154" width="236" height="282" rx="18" fill="#17243a" stroke="#8b7cf6" stroke-width="2"/>
+<text x="768" y="196" text-anchor="middle" fill="#edf2f7" font-size="20" font-weight="700">Multi-query retrieval</text>
+<rect x="686" y="224" width="164" height="42" rx="10" fill="#302d59"/><text x="768" y="251" text-anchor="middle" fill="#bdb5ff" font-size="15">Original question</text>
+<line x1="768" y1="266" x2="768" y2="294" stroke="#8b7cf6" stroke-width="3"/>
+<path d="M768 294L710 326M768 294L768 326M768 294L826 326" fill="none" stroke="#8b7cf6" stroke-width="3"/>
+<rect x="670" y="326" width="80" height="42" rx="9" fill="#213c55"/><rect x="728" y="374" width="80" height="42" rx="9" fill="#213c55"/><rect x="786" y="326" width="80" height="42" rx="9" fill="#213c55"/>
+<text x="710" y="352" text-anchor="middle" fill="#82dce7" font-size="14">Query A</text><text x="768" y="400" text-anchor="middle" fill="#82dce7" font-size="14">Query B</text><text x="826" y="352" text-anchor="middle" fill="#82dce7" font-size="14">Query C</text>
+<line x1="886" y1="295" x2="958" y2="295" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="966" y="190" width="170" height="210" rx="18" fill="#15313b" stroke="#f2b84b" stroke-width="2"/>
+<text x="1051" y="230" text-anchor="middle" fill="#edf2f7" font-size="18" font-weight="700">Grounded answer</text>
+<rect x="994" y="258" width="114" height="84" rx="10" fill="#f5f0df"/>
+<line x1="1010" y1="280" x2="1092" y2="280" stroke="#c2a75d" stroke-width="5"/><line x1="1010" y1="300" x2="1074" y2="300" stroke="#b5aa8d" stroke-width="5"/><line x1="1010" y1="320" x2="1084" y2="320" stroke="#b5aa8d" stroke-width="5"/>
+<text x="1051" y="374" text-anchor="middle" fill="#f7cf7a" font-size="15">Command R+</text>
+<rect x="64" y="486" width="1072" height="108" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="94" y="527" fill="#edf2f7" font-size="20" font-weight="700">Evaluation on 115 annotated questions</text>
+<text x="94" y="565" fill="#9fb0c7" font-size="17">No RAG F1</text><text x="210" y="565" fill="#7f91aa" font-size="21" font-weight="700">21.85</text>
+<line x1="288" y1="558" x2="388" y2="558" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<text x="424" y="565" fill="#9fb0c7" font-size="17">Multi-query F1</text><text x="565" y="565" fill="#82dce7" font-size="21" font-weight="700">54.25</text>
+<text x="755" y="565" fill="#9fb0c7" font-size="17">Exact match</text><text x="881" y="565" fill="#f7cf7a" font-size="21" font-weight="700">45.21</text>
+</g></svg>

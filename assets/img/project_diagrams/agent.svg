@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Generalizable Agents with Llama 2</title><desc id="desc">Agent training and evaluation flow across interactive environments.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#48c7d9"/></marker></defs>
+<rect width="1200" height="675" rx="28" fill="#101827"/>
+<text x="64" y="76" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Generalizable Agents with Llama 2</text>
+<text x="64" y="112" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="18">Interaction-trajectory tuning across AgentBench environments</text>
+<rect x="64" y="180" width="240" height="132" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="184" y="220" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="700">AgentInstruct</text>
+<text x="184" y="254" text-anchor="middle" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="16">GPT-4 trajectories</text>
+<text x="184" y="282" text-anchor="middle" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="16">ReAct formatting</text>
+<line x1="304" y1="246" x2="382" y2="246" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="390" y="160" width="280" height="172" rx="18" fill="#17243a" stroke="#8b7cf6" stroke-width="2"/>
+<text x="530" y="204" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">Llama 2 7B Chat</text>
+<text x="530" y="241" text-anchor="middle" fill="#bdb5ff" font-family="Inter,Arial,sans-serif" font-size="17">LoRA rank 16</text>
+<text x="530" y="271" text-anchor="middle" fill="#bdb5ff" font-family="Inter,Arial,sans-serif" font-size="17">13 epochs · SageMaker</text>
+<text x="530" y="301" text-anchor="middle" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="15">Instruction-tuned agent</text>
+<line x1="670" y1="246" x2="748" y2="246" stroke="#48c7d9" stroke-width="4" marker-end="url(#a)"/>
+<rect x="756" y="160" width="380" height="172" rx="18" fill="#15313b" stroke="#48c7d9" stroke-width="2"/>
+<text x="946" y="198" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="700">Interactive environments</text>
+<g fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="16">
+<text x="792" y="236">Database</text><text x="962" y="236">Operating system</text>
+<text x="792" y="270">Knowledge graph</text><text x="962" y="270">ALFWorld</text>
+<text x="792" y="304">Card game</text>
+</g>
+<rect x="64" y="394" width="498" height="198" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="94" y="434" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="700">Reason → Act → Observe</text>
+<circle cx="172" cy="505" r="46" fill="#213c55" stroke="#48c7d9" stroke-width="2"/><text x="172" y="511" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="16">Reason</text>
+<circle cx="314" cy="505" r="46" fill="#302d59" stroke="#8b7cf6" stroke-width="2"/><text x="314" y="511" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="16">Act</text>
+<circle cx="456" cy="505" r="46" fill="#3c3421" stroke="#f2b84b" stroke-width="2"/><text x="456" y="511" text-anchor="middle" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="16">Observe</text>
+<line x1="218" y1="505" x2="260" y2="505" stroke="#48c7d9" stroke-width="3" marker-end="url(#a)"/><line x1="360" y1="505" x2="402" y2="505" stroke="#48c7d9" stroke-width="3" marker-end="url(#a)"/>
+<path d="M456 551 C400 625 215 625 172 551" fill="none" stroke="#48c7d9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="594" y="394" width="542" height="198" rx="18" fill="#17243a" stroke="#304461" stroke-width="2"/>
+<text x="624" y="434" fill="#edf2f7" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="700">Success rate improvement</text>
+<text x="624" y="488" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="17">Database</text>
+<rect x="748" y="469" width="32" height="24" rx="6" fill="#5f7291"/><rect x="790" y="469" width="270" height="24" rx="6" fill="#48c7d9"/>
+<text x="1078" y="488" fill="#82dce7" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">0.023 → 0.27</text>
+<text x="624" y="548" fill="#9fb0c7" font-family="Inter,Arial,sans-serif" font-size="17">Operating system</text>
+<rect x="790" y="529" width="110" height="24" rx="6" fill="#8b7cf6"/><text x="918" y="548" fill="#bdb5ff" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">0.014 → 0.11</text>
+</svg>
