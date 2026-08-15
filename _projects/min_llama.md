@@ -9,8 +9,6 @@ category: llm
 
 I implemented the core of a compact **Llama 2** model in PyTorch: normalization, rotary positional embeddings, self-attention, transformer blocks, autoregressive decoding, downstream classification, and the AdamW optimizer. The finished system could generate text from a pretrained checkpoint and be fine-tuned for sentiment classification.
 
-This was completed as part of Carnegie Mellon University's **11-711 Advanced Natural Language Processing** course. The assignment provided the surrounding framework and an eight-layer, 42-million-parameter checkpoint pretrained on TinyStories; my work was to fill in the model's central computations and connect them into a working training and inference pipeline.
-
 ## What I implemented
 
 - RMS normalization for stable pre-normalized transformer blocks;
