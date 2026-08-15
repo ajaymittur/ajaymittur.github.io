@@ -4,11 +4,23 @@ set -euo pipefail
 tmp_dir="$(mktemp -d)"
 tmp_override="${tmp_dir}/distill-override.yml"
 tmp_site="${tmp_dir}/site"
+staged_fixture="_posts/2018-12-22-distill.md"
+fixture_was_staged=false
 
 cleanup() {
+  if [ "${fixture_was_staged}" = true ]; then
+    rm -f "${staged_fixture}"
+  fi
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
+
+# The personalized site keeps starter examples out of the published _posts
+# collection. Stage only the fixture this integration check needs.
+if [ ! -e "${staged_fixture}" ]; then
+  cp "_posts_examples/2018-12-22-distill.md" "${staged_fixture}"
+  fixture_was_staged=true
+fi
 
 cat >"${tmp_override}" <<'YAML'
 giscus:

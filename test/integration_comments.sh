@@ -4,11 +4,30 @@ set -euo pipefail
 tmp_dir="$(mktemp -d)"
 tmp_override="${tmp_dir}/comments-test-override.yml"
 tmp_site="${tmp_dir}/site"
+staged_fixtures=()
+
+stage_fixture() {
+  local source="$1"
+  local target="$2"
+  if [ ! -e "${target}" ]; then
+    cp "${source}" "${target}"
+    staged_fixtures+=("${target}")
+  fi
+}
 
 cleanup() {
+  local fixture
+  for fixture in "${staged_fixtures[@]}"; do
+    rm -f "${fixture}"
+  done
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
+
+# The personalized site keeps starter examples out of the published _posts
+# collection. Stage only the fixtures this integration check needs.
+stage_fixture "_posts_examples/2022-12-10-giscus-comments.md" "_posts/2022-12-10-giscus-comments.md"
+stage_fixture "_posts_examples/2015-10-20-disqus-comments.md" "_posts/2015-10-20-disqus-comments.md"
 
 cat >"${tmp_override}" <<'YAML'
 giscus:
