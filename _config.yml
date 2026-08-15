@@ -8,7 +8,7 @@ middle_name:
 last_name: Mittur
 contact_note: # You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Ajay Mittur is a Senior Applied Research Engineer at NVIDIA working on LLM post-training, coding agents, agent harnesses, and AI for chip design.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -305,6 +305,23 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # These collections are retained as starter/reference content, but none of
+  # their standalone pages are linked from the live site.
+  - scope:
+      path: ""
+      type: books
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: news
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: teachings
+    values:
+      sitemap: false
 
 sass:
   style: compressed
@@ -343,7 +360,7 @@ jekyll-archives:
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
   books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: [] # the bookshelf is not used, so do not generate archive URLs for it
 
 # display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
 display_categories: ["external-services"] # these categories will be displayed on the front page of your blog

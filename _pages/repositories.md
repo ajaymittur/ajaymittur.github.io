@@ -4,6 +4,7 @@ permalink: /repositories/
 title: repositories
 description: Some of my public (the ones I can make public) github repositories
 nav: false
+sitemap: false
 nav_order: 4
 ---
 
