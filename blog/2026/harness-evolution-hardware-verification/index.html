@@ -1,0 +1,276 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="google-site-verification" content="shUkqktgysd93e25IgfzNPDzz0kzuMjUW1G4Dqkhf54"> <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses? | Ajay Mittur </title> <meta name="author" content="Ajay Mittur"> <meta name="description" content="We let LLMs evolve the harness around a coding agent for hardware verification. Coverage went way up; correctness improved less, and the gains were split across harnesses instead of consolidating into one."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta property="og:site_name" content="Ajay Mittur"> <meta property="og:type" content="article"> <meta property="og:title" content="Ajay Mittur | Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?"> <meta property="og:url" content="https://ajaymittur.github.io/blog/2026/harness-evolution-hardware-verification/"> <meta property="og:description" content="We let LLMs evolve the harness around a coding agent for hardware verification. Coverage went way up; correctness improved less, and the gains were split across harnesses instead of consolidating into one."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?"> <meta name="twitter:description" content="We let LLMs evolve the harness around a coding agent for hardware verification. Coverage went way up; correctness improved less, and the gains were split across harnesses instead of consolidating into one."> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Ajay Mittur"
+        },
+        "url": "https://ajaymittur.github.io/blog/2026/harness-evolution-hardware-verification/",
+        "@type": "BlogPosting",
+        "description": "We let LLMs evolve the harness around a coding agent for hardware verification. Coverage went way up; correctness improved less, and the gains were split across harnesses instead of consolidating into one.",
+        "headline": "Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?",
+        
+        "sameAs": ["https://twitter.com/ajaymittur","https://www.linkedin.com/in/ajay-mittur","https://github.com/ajaymittur","https://scholar.google.com/citations?user=hWdSYGsAAAAJ"],
+        
+        "name": "Ajay Mittur",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://ajaymittur.github.io/blog/2026/harness-evolution-hardware-verification/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Ajay</span> Mittur </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">logs </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?</h1> <p class="post-meta"> Created on September 24, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/agents"> <i class="fa-solid fa-hashtag fa-sm"></i> agents</a>   <a href="/blog/tag/llm"> <i class="fa-solid fa-hashtag fa-sm"></i> llm</a>   <a href="/blog/tag/harness-engineering"> <i class="fa-solid fa-hashtag fa-sm"></i> harness-engineering</a>   <a href="/blog/tag/hardware-verification"> <i class="fa-solid fa-hashtag fa-sm"></i> hardware-verification</a>   <a href="/blog/tag/paper"> <i class="fa-solid fa-hashtag fa-sm"></i> paper</a>   ·   <a href="/blog/category/agents"> <i class="fa-solid fa-tag fa-sm"></i> agents</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p><em>Joint work with Kidus Seyoum. The paper is on <a href="https://arxiv.org/abs/2609.28908" rel="external nofollow noopener" target="_blank">arXiv</a>.</em></p> <p>There’s been a lot of talk lately about recursive self-improvement: AI systems that improve the systems they run on, with each round making the next one easier. In my <a href="/blog/2026/coding-agents-harnesses-where-things-are-going/">last post</a> I pointed to self-evolving harnesses as one place where this is already happening, with agents rewriting their own scaffolding for measurable gains. This project started as a way to see how that would play out in hardware. Hardware design verification (DV) is one of those domains models see far less of in training than software engineering, and the results are easy to check, so it’s a good test of whether the loop keeps improving or stalls.</p> <h2 id="setup">Setup</h2> <p>We keep the subject model fixed and have stronger language models like Opus 5 and GPT-5.5 propose changes to the runtime harness and scaffold configuration, based on execution evidence. Candidates are screened with cheap trials, then confirmed with five-trial runs. Every candidate is materialized in its own directory, evaluated, and recorded in an archive.</p> <p>The main benchmark is 12 proprietary DV root-cause localization tasks. The agent gets a read-only workspace and has to find where the bug is and recommend a change. The primary subject model is Kimi K3, with additional runs on DeepSeek V4 Pro and MiniMax M3.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/harness-evolution-overview-480.webp 480w,/assets/img/harness-evolution-overview-800.webp 800w,/assets/img/harness-evolution-overview-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/harness-evolution-overview.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="System overview: a candidate harness (instructions, retrieval, runtime, finalization) wraps a fixed subject model working in a task workspace. Attempts are scored by a fixed evaluator, and an evolution loop aggregates outcomes, has an LLM optimizer propose harness edits, verifies and evaluates the candidates, and promotes or archives them." data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <div class="caption">The setup. The subject model stays fixed while an outer loop proposes, evaluates, and keeps or archives harness candidates.</div> <h2 id="what-we-found">What we found</h2> <p><strong>Evolution helps a lot with finishing and a little with being right.</strong> The evolved harnesses raised completed attempts by 71–76% (34/60 → 58–60/60) and any-hit task coverage by 80–100% (5/12 → 9–10/12). Total correct attempts rose only 18–24% (17/60 → 20–21/60). The mechanisms the proposer came up with, like bounded search, evidence-grounded queries, coverage ledgers, and causal commitment, mostly keep the agent from stalling or running out of turns.</p> <p><strong>The gains don’t consolidate.</strong> The two best evolved harnesses solved 11/12 tasks between them, but neither one was strongest everywhere. One solved T3 but failed every T10 trial; the other recovered T10 and lost T3. A larger run produced 958 candidates, and the archive as a whole covered 10/12 tasks (the baseline passed 1/12), but only two candidates passed our strict promotion rule. We also saw validation gains fail to transfer: a DeepSeek harness went from 0.375 to 0.725 on a held-out validation set, then tied the baseline at 2/12 on full replays.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/harness-evolution-task-matrix-480.webp 480w,/assets/img/harness-evolution-task-matrix-800.webp 800w,/assets/img/harness-evolution-task-matrix-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/harness-evolution-task-matrix.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Heatmap of successful trials out of five for each of 12 design-verification tasks under the Kimi K3 baseline, the evidence-grounded harness, and the batched causal harness." data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <div class="caption">Successful trials out of five per task. The totals improve, but each evolved harness wins on different tasks and some regress against the baseline.</div> <p><strong>It works for repair too.</strong> In a case study on 142 CVDP tasks with GLM-5.2, an evolved repair harness reached 61/142 functional passes against a 45/142 baseline, 35.6% more. The final functional verifier ran only after the agent’s output was complete, and its result was not fed back to the agent for that task.</p> <h2 id="takeaway">Takeaway</h2> <p>If evolution keeps producing specialists instead of one harness that wins everywhere, then picking a single “best” harness and throwing away the rest loses useful work. We argue the archive should be a first-class output: keep manifests, task-level scores, traces, and lineage; select or route among complementary harnesses; and report archive-union coverage separately from single-harness performance so it doesn’t look like one harness is better than it is.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/harness-evolution-archive-coverage-480.webp 480w,/assets/img/harness-evolution-archive-coverage-800.webp 800w,/assets/img/harness-evolution-archive-coverage-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/harness-evolution-archive-coverage.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Bar charts of tasks covered out of 12. In the large branching experiment: baseline 1, best archived individual 4, archive union 10. In the repeated Kimi K3 evaluation: evidence-grounded 9, batched causal 10, two-harness union 11." data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <div class="caption">The archive covers far more tasks than any single harness. Union bars show portfolio coverage, not the score of one combined harness.</div> <p>This also matters for recursive self-improvement. The usual picture has each round building on the one before, so improvements stack up. In our setting, each round mostly found a different specialist instead. A self-improving loop may need a step that explicitly merges or routes between what earlier rounds found. Otherwise it keeps rediscovering partial wins instead of compounding them.</p> <p>The usual caveats apply. Twelve tasks is a small benchmark, five trials per task still leaves noise, and each evolved harness bundles several changes, so we can’t attribute gains to any single edit. The paper covers these in more detail.</p> <p>Paper: <a href="https://arxiv.org/abs/2609.28908" rel="external nofollow noopener" target="_blank">arXiv:2609.28908</a></p> </div> </article> <br> <hr> <br> If you found this useful, please cite this as: <blockquote> <p>Mittur, Ajay (Sep 2026). Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?. https://ajaymittur.github.io.</p> </blockquote> <p>or as a BibTeX entry:</p> <div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">mittur2026automatic-harness-evolution-for-hardware-design-verification-can-llms-consolidate-gains-across-discovered-harnesses</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">{Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered Harnesses?}</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Mittur, Ajay}</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">{Sep}</span><span class="p">,</span>
+  <span class="na">url</span>     <span class="p">=</span> <span class="s">{https://ajaymittur.github.io/blog/2026/harness-evolution-hardware-verification/}</span>
+<span class="p">}</span>
+</code></pre></div></div> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Ajay Mittur. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTDL7T3GDQ"></script> <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-JTDL7T3GDQ");
+</script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-logs",
+          title: "logs",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of my projects. WIP...",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "cv",
+          description: "My professional experience.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-automatic-harness-evolution-for-hardware-design-verification-can-llms-consolidate-gains-across-discovered-harnesses",
+        
+          title: "Automatic Harness Evolution for Hardware Design Verification: Can LLMs Consolidate Gains Across Discovered...",
+        
+        description: "We let LLMs evolve the harness around a coding agent for hardware verification. Coverage went way up; correctness improved less, and the gains were split across harnesses instead of consolidating into one.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/harness-evolution-hardware-verification/";
+          
+        },
+      },{id: "post-coding-agents-harnesses-and-where-things-are-going",
+        
+          title: "Coding Agents, Harnesses, and Where Things Are Going",
+        
+        description: "Two schools of coding agents, why they're converging, and why the harness — not just the model — is where a lot of the gains now live.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/coding-agents-harnesses-where-things-are-going/";
+          
+        },
+      },{id: "post-mlbox-automating-machine-learning-in-python",
+        
+          title: 'MLBox: Automating Machine Learning in Python <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@ajaymittur/mlbox-automating-machine-learning-in-python-f6779371ae21?source=rss-1fb8a203f419------2", "_blank");
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-started-my-master-39-s-in-ai-at-carnegie-mellon-university-39-s-language-technologies-institute-https-www-lti-cs-cmu-edu-school",
+          title: 'Started my Master&#39;s in AI at Carnegie Mellon University&#39;s [Language Technologies Institute](https://www.lti.cs.cmu.edu/)! <img class="emoji" title=":school:" alt=":school:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3eb.png" height="20" width="20">...',
+          description: "",
+          section: "News",},{id: "news-graduated-from-carnegie-mellon-university-with-an-ms-in-ai-mortar-board",
+          title: 'Graduated from Carnegie Mellon University with an MS in AI! <img class="emoji" title=":mortar_board:" alt=":mortar_board:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-joined-nvidia-as-an-applied-research-engineer-working-on-llm-post-training-and-agents-for-hardware-design",
+          title: 'Joined NVIDIA as an Applied Research Engineer, working on LLM post-training and agents...',
+          description: "",
+          section: "News",},{id: "news-new-post-coding-agents-harnesses-and-where-things-are-going-post-url-2026-07-11-coding-agents-harnesses-where-things-are-going-two-schools-of-coding-agents-why-they-39-re-converging-and-why-the-harness-is-where-a-lot-of-the-gains-now-live",
+          title: 'New post: [Coding Agents, Harnesses, and Where Things Are Going]({% post_url 2026-07-11-coding-agents-harnesses-where-things-are-going %})...',
+          description: "",
+          section: "News",},{id: "news-new-paper-automatic-harness-evolution-for-hardware-design-verification-https-arxiv-org-abs-2609-28908-with-a-short-write-up-post-url-2026-09-24-harness-evolution-hardware-verification-on-what-we-found",
+          title: 'New paper: [Automatic Harness Evolution for Hardware Design Verification](https://arxiv.org/abs/2609.28908), with a short [write-up]({%...',
+          description: "",
+          section: "News",},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-project-3-with-very-long-name",
+          title: 'project 3 with very long name',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "projects-project-4",
+          title: 'project 4',
+          description: "another without an image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-project-5",
+          title: 'project 5',
+          description: "a project with a background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
+            },},{id: "projects-project-6",
+          title: 'project 6',
+          description: "a project with no image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
+            },},{id: "projects-project-7",
+          title: 'project 7',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
+            },},{id: "projects-project-8",
+          title: 'project 8',
+          description: "an other project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
+            },},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
+            },},{id: "projects-english-to-french-machine-translation",
+          title: 'English to French Machine Translation',
+          description: "Compared neural machine translation architectures and adapted Llama 2 7B for English-to-French translation using quantization and QLoRA.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/enfr_llm/";
+            },},{id: "projects-generalizable-agents-with-llama-2",
+          title: 'Generalizable Agents with Llama 2',
+          description: "Adapted Llama 2 7B into a general-purpose agent using interaction-trajectory instruction tuning and Tree-of-Thought experiments across AgentBench environments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm_agent/";
+            },},{id: "projects-mini-llama-2-implementation",
+          title: 'Mini Llama 2 Implementation',
+          description: "Implemented the core architecture, generation loop, optimizer, and classification pipeline for a compact 42M-parameter Llama 2 model.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/min_llama/";
+            },},{id: "projects-real-world-movie-recommendation-system",
+          title: 'Real-world Movie Recommendation System',
+          description: "A production-style movie recommendation service for 1M+ simulated users, with online evaluation, A/B testing, monitoring, and scalable deployment infrastructure.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/movie_rec/";
+            },},{id: "projects-improving-multi-modal-interactions-in-memes",
+          title: 'Improving Multi-modal Interactions in Memes',
+          description: "Studied how vision-language models understand memes, using retrieval-augmented generation and abductive-reasoning fine-tuning to improve multimodal reasoning.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multimodal/";
+            },},{id: "projects-rag-question-answering-system-on-pittsburgh",
+          title: 'RAG Question Answering System on Pittsburgh',
+          description: "Built an end-to-end RAG system for factual questions about Pittsburgh and CMU, comparing baseline retrieval, reranking, and multi-query retrieval.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pitt_rag/";
+            },},{id: "projects-llm-agents-for-scientific-discovery",
+          title: 'LLM Agents for Scientific Discovery',
+          description: "A benchmark for evaluating how well LLM agents generate novel research ideas, formulate rigorous experiment plans, and implement them in code.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/science_agents/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/ajaymittur", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/ajay-mittur", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/ajaymittur", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=hWdSYGsAAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
