@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated from Carnegie Mellon University with an MS in Artificial Intelligence and Innovation! :mortar_board:
+Graduated from Carnegie Mellon University with an MS in AI! :mortar_board:

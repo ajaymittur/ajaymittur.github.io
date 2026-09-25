@@ -12,7 +12,8 @@ profile:
     <p>San Francisco, CA</p>
     <p><a href="https://x.com/ajaymittur">💬 DM me on X</a></p>
 
-news: true # includes a list of news items
+announcements:
+  enabled: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 latest_posts:
@@ -27,7 +28,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 Hi, I’m Ajay, a Senior Applied Research Engineer at [NVIDIA](https://www.nvidia.com), where I work on LLM post-training, agents, and agent harnesses that accelerate chip design. My work spans agent frameworks, recursive self-improvement of coding agents, and post-training large models for complex reasoning, root-cause analysis, and design verification.
 
-I completed my Master of Science in Artificial Intelligence and Innovation at Carnegie Mellon University in May 2025. While at CMU, I collaborated on research with [Prof. Graham Neubig](http://www.phontron.com/) on LLM agents for scientific discovery — idea generation, experiment planning, code generation, and paper writing. Previously, I worked on the [ARC-AGI](https://arcprize.org/arc) challenge with [Prof. Carolyn Rosé](https://cp3a.github.io/), researching LLM hypothesis generation and test-time learning.
+I completed my MS in AI at Carnegie Mellon University in May 2025. While at CMU, I collaborated on research with [Prof. Graham Neubig](http://www.phontron.com/) on LLM agents for scientific discovery — idea generation, experiment planning, code generation, and paper writing. Previously, I worked on the [ARC-AGI](https://arcprize.org/arc) challenge with [Prof. Carolyn Rosé](https://cp3a.github.io/), researching LLM hypothesis generation and test-time learning.
 
 Before NVIDIA, I worked with [BNY](https://www.bny.com/corporate/global/en/about-us/technology-innovation/artificial-intelligence.html) on cross-LLM automatic prompt optimization, and spent the summer of 2024 on [BILL](https://www.bill.com/)'s InfoSec team building threat detection models. I've also worked at [Amazon](https://www.amazon.com/), [Samsung R&D India](https://research.samsung.com/sri-b), [Walmart](https://www.walmart.com), and [Honeywell](https://www.honeywellforge.ai/us/en/about-us/company) across Machine Learning and Software Engineering.
 
